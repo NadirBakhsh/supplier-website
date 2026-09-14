@@ -18,14 +18,17 @@ export function HowItWorks() {
           className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6"
         >
           {HOW_IT_WORKS_STEPS.map((step) => (
-            <div key={step.number} className="how-step flex flex-col items-center text-center">
+            <div
+              key={step.number}
+              className="how-step flex flex-col items-center text-center opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
+            >
               <PhoneScreenshot
                 src={step.screenshot}
                 alt={step.alt}
                 size="sm"
                 className="mb-6"
               />
-              <span className="text-sm font-bold text-brand-400">{step.number}</span>
+              <span className="text-sm font-bold text-brand-600">{step.number}</span>
               <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
               <p className="mt-2 max-w-[16rem] text-sm leading-6 text-muted-foreground">
                 {step.description}

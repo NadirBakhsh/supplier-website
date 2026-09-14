@@ -8,7 +8,7 @@ import {
 
 export function AudienceSection() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-muted/40 py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={AUDIENCE_BADGE}
@@ -16,7 +16,7 @@ export function AudienceSection() {
           description={AUDIENCE_SUBHEADLINE}
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {AUDIENCE_CATEGORIES.map((category) => (
             <div
               key={category.title}

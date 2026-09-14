@@ -32,7 +32,7 @@ export function FeatureShowcase() {
               <div
                 key={feature.label}
                 className={cn(
-                  "feature-row grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16"
+                  "feature-row grid grid-cols-1 items-center gap-10 opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0 md:grid-cols-2 md:gap-16"
                 )}
               >
                 <div className={cn(reversed && "md:order-2")}>

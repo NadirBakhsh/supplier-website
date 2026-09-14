@@ -87,7 +87,7 @@ type DownloadButtonsProps = {
 
 export function DownloadButtons({ tone = "light", className }: DownloadButtonsProps) {
   return (
-    <div id="download" className={cn("flex flex-wrap items-center gap-3", className)}>
+    <div className={cn("flex flex-wrap items-center gap-3", className)}>
       <StoreButton
         href={APP_STORE_URL}
         icon={<AppleIcon />}

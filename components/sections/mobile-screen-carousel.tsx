@@ -40,39 +40,45 @@ export function MobileScreenCarousel() {
           description={CAROUSEL_SUBHEADLINE}
         />
 
-        <div className="mt-14 grid grid-cols-1 items-center gap-10 md:grid-cols-[auto_1fr] md:gap-16">
-          <div className="mx-auto flex items-center gap-3">
-            <button
-              type="button"
-              onClick={() => goTo(activeIndex - 1)}
-              aria-label="Previous screen"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-sm transition-colors hover:border-brand-300 hover:text-brand-700"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
+        <div className="mt-14 grid grid-cols-1 items-stretch gap-10 md:grid-cols-[auto_1fr] md:gap-16">
+          <div className="mx-auto flex w-full max-w-[280px] flex-col items-center gap-4 sm:mx-0 sm:w-auto sm:max-w-none sm:flex-row sm:gap-3">
             <motion.div
               onPanEnd={handlePanEnd}
-              className="w-full max-w-[280px] cursor-grab touch-pan-y active:cursor-grabbing"
+              className="w-[280px] max-w-full shrink-0 cursor-grab touch-pan-y active:cursor-grabbing sm:order-2"
             >
               <ScreenshotCarousel screens={CAROUSEL_SCREENS} activeIndex={activeIndex} size="lg" />
             </motion.div>
 
-            <button
-              type="button"
-              onClick={() => goTo(activeIndex + 1)}
-              aria-label="Next screen"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-sm transition-colors hover:border-brand-300 hover:text-brand-700"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
+            <div className="flex items-center gap-3 sm:contents">
+              <button
+                type="button"
+                onClick={() => goTo(activeIndex - 1)}
+                aria-label="Previous screen"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-sm transition-colors hover:border-brand-300 hover:text-brand-700 sm:order-1"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => goTo(activeIndex + 1)}
+                aria-label="Next screen"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-white text-foreground shadow-sm transition-colors hover:border-brand-300 hover:text-brand-700 sm:order-3"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
             <p className="text-sm font-medium text-muted-foreground">
               {active ? active.description : ""}
             </p>
-            <div className="flex flex-wrap gap-2" role="tablist" aria-label="App screens">
+            <div
+              className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0"
+              role="tablist"
+              aria-label="App screens"
+            >
               {CAROUSEL_SCREENS.map((screen, index) => (
                 <button
                   key={screen.id}
@@ -81,7 +87,7 @@ export function MobileScreenCarousel() {
                   aria-selected={index === activeIndex}
                   onClick={() => goTo(index)}
                   className={cn(
-                    "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
+                    "shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-colors",
                     index === activeIndex
                       ? "border-brand-500 bg-brand-500 text-white"
                       : "border-border bg-white text-muted-foreground hover:border-brand-300 hover:text-brand-700"

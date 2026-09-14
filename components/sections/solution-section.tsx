@@ -26,7 +26,7 @@ export function SolutionSection() {
           <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             {SOLUTION_HEADLINE}
           </h2>
-          <p className="mt-4 max-w-xl text-base text-white/70 sm:text-lg">
+          <p className="mt-4 max-w-xl text-base text-white/80 sm:text-lg">
             {SOLUTION_SUBHEADLINE}
           </p>
 
@@ -34,13 +34,13 @@ export function SolutionSection() {
             {SOLUTION_POINTS.map((point) => (
               <div
                 key={point.title}
-                className="solution-point flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5"
+                className="solution-point flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-brand-200">
                   <point.icon className="h-5 w-5" />
                 </span>
                 <h3 className="text-sm font-semibold text-white">{point.title}</h3>
-                <p className="text-sm leading-6 text-white/65">{point.description}</p>
+                <p className="text-sm leading-6 text-white/80">{point.description}</p>
               </div>
             ))}
           </div>

@@ -11,7 +11,7 @@ import { faqJsonLd } from "@/lib/seo"
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-white py-20 sm:py-28">
+    <section id="faq" className="bg-muted/40 py-20 sm:py-28">
       <JsonLd data={faqJsonLd(FAQS)} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeader badge={FAQ_BADGE} title={FAQ_HEADLINE} />

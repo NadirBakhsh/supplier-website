@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { DownloadButtons } from "@/components/ui/download-buttons"
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { NAV_LINKS, SITE_NAME } from "@/lib/content/site"
+import { cn } from "@/lib/utils"
 
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -43,7 +44,7 @@ export function Header() {
         </div>
 
         <div className="hidden items-center md:flex lg:hidden">
-          <Link href="#download" className={buttonVariants({ size: "sm" })}>
+          <Link href="#download" className={cn(buttonVariants({ size: "default" }), "h-11 px-4")}>
             Download
           </Link>
         </div>

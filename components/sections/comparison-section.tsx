@@ -10,7 +10,7 @@ import {
 
 export function ComparisonSection() {
   return (
-    <section className="bg-muted/40 py-20 sm:py-28">
+    <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={COMPARISON_BADGE}

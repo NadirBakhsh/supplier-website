@@ -42,7 +42,14 @@ export function useScrollReveal(selector: string) {
             return
           }
 
-          gsap.set(items, { opacity: 0, y: 32 })
+          // The `.feature-row` / `.problem-card` / `.solution-point` /
+          // `.how-step` elements already start visually hidden via the
+          // `opacity-0 translate-y-8` Tailwind classes baked into their
+          // markup (present in both SSR and first client render), so we
+          // don't need to (and must not) mutate their inline styles here —
+          // doing so before hydration completes previously caused SSR/CSR
+          // mismatches. GSAP only needs to animate them to their revealed
+          // state on scroll.
           items.forEach((item) => {
             gsap.to(item, {
               opacity: 1,

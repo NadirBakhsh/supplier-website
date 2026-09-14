@@ -23,7 +23,7 @@ export function ProblemSection() {
           {PROBLEMS.map((problem) => (
             <div
               key={problem.title}
-              className="problem-card flex flex-col gap-4 rounded-2xl border border-border bg-muted/40 p-6 transition-colors hover:border-brand-200 hover:bg-brand-50/60"
+              className="problem-card flex flex-col gap-4 rounded-2xl border border-border bg-muted/40 p-6 opacity-0 translate-y-8 transition-colors motion-reduce:opacity-100 motion-reduce:translate-y-0 hover:border-brand-200 hover:bg-brand-50/60"
             >
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-600 ring-1 ring-border">
                 <problem.icon className="h-5 w-5" />

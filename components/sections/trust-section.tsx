@@ -10,7 +10,7 @@ import {
 
 export function TrustSection() {
   return (
-    <section className="bg-muted/40 py-20 sm:py-28">
+    <section className="bg-white py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={TRUST_BADGE}
@@ -34,7 +34,7 @@ export function TrustSection() {
         </div>
 
         <div className="mt-6 flex items-start gap-3 rounded-2xl border border-dashed border-border bg-white/60 p-6 text-sm text-muted-foreground">
-          <MessageSquareQuote className="mt-0.5 h-5 w-5 shrink-0 text-brand-300" />
+          <MessageSquareQuote className="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
           <p>{TRUST_PLACEHOLDER_NOTE}</p>
         </div>
       </div>
