@@ -3,7 +3,12 @@
 import Image from "next/image"
 import { PhoneMockup } from "@/components/product/phone-mockup"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { SOLUTION_BADGE, SOLUTION_HEADLINE, SOLUTION_POINTS, SOLUTION_SUBHEADLINE } from "@/lib/content/solution"
+import {
+  SOLUTION_BADGE,
+  SOLUTION_HEADLINE,
+  SOLUTION_POINTS,
+  SOLUTION_SUBHEADLINE
+} from "@/lib/content/solution"
 
 export function SolutionSection() {
   const containerRef = useScrollReveal(".solution-point")
@@ -18,7 +23,7 @@ export function SolutionSection() {
         className="absolute top-0 right-0 h-[28rem] w-[28rem] rounded-full bg-brand-green-500/10 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 md:grid-cols-2 md:items-center lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 md:grid-cols-1 md:items-center lg:px-8">
         <div>
           <span className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold tracking-wide text-white/80 uppercase">
             {SOLUTION_BADGE}
@@ -30,37 +35,57 @@ export function SolutionSection() {
             {SOLUTION_SUBHEADLINE}
           </p>
 
-          <div ref={containerRef} className="mt-10 grid gap-4 sm:grid-cols-2">
-            {SOLUTION_POINTS.map((point) => (
-              <div
-                key={point.title}
-                className="solution-point flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-brand-200">
-                  <point.icon className="h-5 w-5" />
-                </span>
-                <h3 className="text-sm font-semibold text-white">{point.title}</h3>
-                <p className="text-sm leading-6 text-white/80">{point.description}</p>
-              </div>
-            ))}
+          <div ref={containerRef} className="mt-10 grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 grid-rows-3 ">
+              {SOLUTION_POINTS.slice(0, 3).map((point) => (
+                <div
+                  key={point.title}
+                  className="solution-point flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-brand-200">
+                    <point.icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="text-sm font-semibold text-white">
+                    {point.title}
+                  </h3>
+                  <p className="text-sm leading-6 text-white/80">
+                    {point.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="grid gap-4 grid-rows-1 ">
+              <PhoneMockup size="lg">
+                <Image
+                  src="/screenshots/supplier/supplier-wallet-screen.png"
+                  alt="4Supplier wallet screen showing income, expense, and balance"
+                  fill
+                  sizes="320px"
+                  className="object-cover object-top"
+                />
+              </PhoneMockup>
+            </div>
+            <div className="grid gap-4 grid-rows-3 ">
+              {SOLUTION_POINTS.slice(3, 6).map((point) => (
+                <div
+                  key={point.title}
+                  className="solution-point flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 opacity-0 translate-y-8 motion-reduce:opacity-100 motion-reduce:translate-y-0"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-brand-200">
+                    <point.icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="text-sm font-semibold text-white">
+                    {point.title}
+                  </h3>
+                  <p className="text-sm leading-6 text-white/80">
+                    {point.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[300px]">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 scale-110 rounded-[3rem] bg-brand-500/30 blur-3xl"
-          />
-          <PhoneMockup size="lg">
-            <Image
-              src="/screenshots/supplier/supplier-wallet-screen.png"
-              alt="4Supplier wallet screen showing income, expense, and balance"
-              fill
-              sizes="320px"
-              className="object-cover object-top"
-            />
-          </PhoneMockup>
-        </div>
       </div>
     </section>
   )

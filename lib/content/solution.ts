@@ -8,7 +8,7 @@ export type SolutionPoint = {
 }
 
 export const SOLUTION_BADGE = "The Solution"
-export const SOLUTION_HEADLINE = "One App to Run Your Supplier Operations."
+export const SOLUTION_HEADLINE = "One App to Run Your Supplier Operations"
 export const SOLUTION_SUBHEADLINE =
   "4Supplier brings customer management, order management, delivery assignment, and your wallet into a single mobile app — built around how supplier businesses actually work."
 
