@@ -12,6 +12,16 @@ import { cn } from "@/lib/utils"
 
 const CARD_ICONS = [Package, TrendingDown, TrendingUp]
 
+const CARD_POSITIONS = [
+  "top-3 left-0",
+  "bottom-6 right-0",
+  "top-[40%] right-0",
+] as const
+
+const HEADLINE_LINES = HERO_CONTENT.headline
+  .split(". ")
+  .map((line) => (line.endsWith(".") ? line : `${line}.`))
+
 function getContainerVariants(reduceMotion: boolean): Variants {
   return {
     hidden: {},
@@ -44,7 +54,7 @@ export function Hero() {
   const itemVariants = getItemVariants(shouldReduceMotion)
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white">
       <div
         aria-hidden="true"
         className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"
@@ -54,12 +64,12 @@ export function Hero() {
         className="absolute top-40 -left-24 h-72 w-72 rounded-full bg-brand-green-500/10 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8 lg:py-16 xl:gap-16 xl:py-20">
         <motion.div
           initial="hidden"
           animate="show"
           variants={containerVariants}
-          className="flex flex-col gap-6"
+          className="flex min-w-0 flex-col items-start gap-4 sm:gap-5"
         >
           <motion.span
             variants={itemVariants}
@@ -70,156 +80,154 @@ export function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+            className="text-[clamp(1.75rem,1.05rem+2.8vw,3.5rem)] font-semibold leading-[1.12] tracking-tight text-foreground"
           >
-            {HERO_CONTENT.headline}
+            {HEADLINE_LINES.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="max-w-xl text-lg text-muted-foreground">
+          <motion.p
+            variants={itemVariants}
+            className="max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
+          >
             {HERO_CONTENT.subheadline}
           </motion.p>
 
-          <motion.div
-            id="download"
-            variants={itemVariants}
-            className="flex flex-wrap items-center gap-4 pt-2"
-          >
-            <DownloadButtons />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="flex w-full flex-col items-start gap-3 pt-1 sm:gap-4">
+            <div id="download" className="w-full max-w-md sm:w-auto sm:max-w-none">
+              <DownloadButtons className="w-full max-sm:flex-col max-sm:*:w-full max-sm:*:justify-center sm:w-auto" />
+            </div>
             <Link
               href={HERO_CONTENT.secondaryCtaHref}
               className={cn(
                 buttonVariants({ variant: "ghost" }),
-                "group px-0 text-brand-700 hover:bg-transparent hover:text-brand-800"
+                "group min-h-11 px-0 text-brand-700 hover:bg-transparent hover:text-brand-800"
               )}
             >
               {HERO_CONTENT.secondaryCta}
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 motion-reduce:transition-none" />
             </Link>
           </motion.div>
         </motion.div>
 
-        <div className="flex flex-col gap-6">
-          <div className="relative mx-auto h-[420px] w-full max-w-sm sm:h-[480px]">
-            <motion.div
-              initial={{ opacity: 0, x: 30, rotate: 6 }}
-              animate={{ opacity: 1, x: 0, rotate: 6 }}
-              transition={
-                shouldReduceMotion
-                  ? { duration: 0.01 }
-                  : { duration: 0.7, delay: 0.15, ease: "easeOut" }
-              }
-              className="absolute top-4 right-0 hidden w-[62%] opacity-90 md:block"
-            >
-              <PhoneMockup size="md">
-                <Image
-                  src="/screenshots/supplier/supplier-customer-list-screen.png"
-                  alt="4Supplier customer list screen"
-                  fill
-                  sizes="220px"
-                  className="object-cover object-top"
-                />
-              </PhoneMockup>
-            </motion.div>
+        <div className="flex w-full flex-col gap-4 sm:gap-5">
+          <div className="relative mx-auto w-full max-w-66 pt-2 sm:max-w-76 sm:pt-6 md:max-w-84 lg:ml-auto lg:max-w-90 lg:pt-8 xl:max-w-96">
+              <motion.div
+                initial={{ opacity: 0, x: 30, rotate: 6 }}
+                animate={{ opacity: 1, x: 0, rotate: 6 }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0.01 }
+                    : { duration: 0.7, delay: 0.15, ease: "easeOut" }
+                }
+                className="absolute top-0 right-0 hidden w-[56%] opacity-90 sm:block"
+              >
+                <PhoneMockup size="md">
+                  <Image
+                    src="/screenshots/supplier/supplier-customer-list-screen.png"
+                    alt="4Supplier customer list screen"
+                    fill
+                    sizes="(min-width: 1280px) 220px, 180px"
+                    loading="eager"
+                    className="object-cover object-top"
+                  />
+                </PhoneMockup>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={
-                shouldReduceMotion
-                  ? { duration: 0.01 }
-                  : { duration: 0.7, delay: 0.3, ease: "easeOut" }
-              }
-              className="absolute bottom-0 left-0 w-[68%]"
-            >
-              <PhoneMockup size="lg">
-                <Image
-                  src="/screenshots/supplier/supplier-home-screen.png"
-                  alt="4Supplier supplier dashboard home screen"
-                  fill
-                  sizes="280px"
-                  priority
-                  className="object-cover object-top"
-                />
-              </PhoneMockup>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0.01 }
+                    : { duration: 0.7, delay: 0.3, ease: "easeOut" }
+                }
+                className="relative mx-auto w-[72%] sm:mx-0 sm:w-[66%]"
+              >
+                <PhoneMockup size="lg">
+                  <Image
+                    src="/screenshots/supplier/supplier-home-screen.png"
+                    alt="4Supplier supplier dashboard home screen"
+                    fill
+                    sizes="(min-width: 1280px) 280px, (min-width: 640px) 220px, 200px"
+                    priority
+                    className="object-cover object-top"
+                  />
+                </PhoneMockup>
+              </motion.div>
 
-            {HERO_CONTENT.floatingCards.map((card, index) => {
-              const Icon = CARD_ICONS[index] ?? Package
-              const position = [
-                "top-2 -left-6",
-                "bottom-10 -right-4",
-                "top-1/2 -right-10",
-              ][index]
+              {HERO_CONTENT.floatingCards.map((card, index) => {
+                const Icon = CARD_ICONS[index] ?? Package
 
-              return (
-                <motion.div
-                  key={card.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={
-                    shouldReduceMotion
-                      ? { opacity: 1, scale: 1 }
-                      : { opacity: 1, scale: 1, y: [0, -6, 0] }
-                  }
-                  transition={
-                    shouldReduceMotion
-                      ? { duration: 0.01 }
-                      : {
-                          opacity: { duration: 0.5, delay: 0.55 + index * 0.1 },
-                          scale: { duration: 0.5, delay: 0.55 + index * 0.1 },
-                          y: {
-                            duration: 3.5,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: index * 0.4,
-                          },
-                        }
-                  }
-                  className={cn(
-                    "absolute hidden w-40 rounded-2xl border border-border bg-white/95 p-3 shadow-lg backdrop-blur sm:block",
-                    position
-                  )}
-                >
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={cn(
-                        "flex h-7 w-7 items-center justify-center rounded-full",
-                        card.tone === "outstanding" && "bg-red-50 text-outstanding",
-                        card.tone === "positive" && "bg-brand-green-500/10 text-brand-green-700",
-                        !card.tone && "bg-brand-50 text-brand-700"
-                      )}
-                    >
-                      <Icon className="h-3.5 w-3.5" />
-                    </span>
-                    <span className="text-[11px] font-medium text-muted-foreground">
-                      {card.label}
-                    </span>
-                  </div>
-                  <p
+                return (
+                  <motion.div
+                    key={card.label}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={
+                      shouldReduceMotion
+                        ? { opacity: 1, scale: 1 }
+                        : { opacity: 1, scale: 1, y: [0, -6, 0] }
+                    }
+                    transition={
+                      shouldReduceMotion
+                        ? { duration: 0.01 }
+                        : {
+                            opacity: { duration: 0.5, delay: 0.55 + index * 0.1 },
+                            scale: { duration: 0.5, delay: 0.55 + index * 0.1 },
+                            y: {
+                              duration: 3.5,
+                              repeat: Infinity,
+                              ease: "easeInOut",
+                              delay: index * 0.4,
+                            },
+                          }
+                    }
                     className={cn(
-                      "mt-1.5 text-lg font-semibold text-foreground",
-                      card.tone === "outstanding" && "text-outstanding",
-                      card.tone === "positive" && "text-brand-green-700"
+                      "absolute z-10 hidden w-36 rounded-2xl border border-border bg-white/95 p-3 shadow-lg backdrop-blur lg:block xl:w-40",
+                      CARD_POSITIONS[index]
                     )}
                   >
-                    {card.value}
-                  </p>
-                  <p className="text-[11px] text-muted-foreground">{card.sublabel}</p>
-                </motion.div>
-              )
-            })}
+                    <div className="flex items-center gap-2">
+                      <span
+                        className={cn(
+                          "flex h-7 w-7 shrink-0 items-center justify-center rounded-full",
+                          card.tone === "outstanding" && "bg-red-50 text-outstanding",
+                          card.tone === "positive" && "bg-brand-green-500/10 text-brand-green-700",
+                          !card.tone && "bg-brand-50 text-brand-700"
+                        )}
+                      >
+                        <Icon className="h-3.5 w-3.5" />
+                      </span>
+                      <span className="text-[11px] font-medium text-muted-foreground">
+                        {card.label}
+                      </span>
+                    </div>
+                    <p
+                      className={cn(
+                        "mt-1.5 text-lg font-semibold text-foreground",
+                        card.tone === "outstanding" && "text-outstanding",
+                        card.tone === "positive" && "text-brand-green-700"
+                      )}
+                    >
+                      {card.value}
+                    </p>
+                    <p className="text-[11px] text-muted-foreground">{card.sublabel}</p>
+                  </motion.div>
+                )
+              })}
           </div>
 
-          <div className="flex gap-3 overflow-x-auto pb-1 sm:hidden">
+          <div className="mx-auto grid w-full max-w-66 grid-cols-1 gap-2 min-[400px]:grid-cols-3 sm:max-w-76 md:max-w-84 lg:hidden">
             {HERO_CONTENT.floatingCards.map((card, index) => {
               const Icon = CARD_ICONS[index] ?? Package
 
               return (
                 <div
                   key={card.label}
-                  className="flex shrink-0 items-center gap-2.5 rounded-xl border border-border bg-white px-3 py-2 shadow-sm"
+                  className="flex min-w-0 items-center gap-2.5 rounded-xl border border-border bg-white px-3 py-2.5 shadow-sm"
                 >
                   <span
                     className={cn(
@@ -231,8 +239,8 @@ export function Hero() {
                   >
                     <Icon className="h-4 w-4" />
                   </span>
-                  <div className="flex flex-col leading-tight whitespace-nowrap">
-                    <span className="text-[11px] font-medium text-muted-foreground">
+                  <div className="flex min-w-0 flex-col leading-tight">
+                    <span className="truncate text-[11px] font-medium text-muted-foreground">
                       {card.label}
                     </span>
                     <span
