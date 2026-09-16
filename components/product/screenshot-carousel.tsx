@@ -13,18 +13,21 @@ type Screen = {
 type ScreenshotCarouselProps = {
   screens: Screen[]
   activeIndex: number
+  direction?: number
   size?: "sm" | "md" | "lg"
   className?: string
 }
 
 /**
- * Renders a single PhoneMockup whose screen content cross-fades/scales
- * between screenshots as `activeIndex` changes. Fully controlled — the
- * parent (MobileScreenCarousel) owns the active index and swipe/click logic.
+ * Renders a single PhoneMockup whose screen content slides left/right
+ * between screenshots as `activeIndex` changes, in the direction of
+ * travel. Fully controlled — the parent (MobileScreenCarousel) owns the
+ * active index, direction, and swipe/click logic.
  */
 export function ScreenshotCarousel({
   screens,
   activeIndex,
+  direction = 1,
   size = "lg",
   className,
 }: ScreenshotCarouselProps) {
@@ -35,12 +38,13 @@ export function ScreenshotCarousel({
 
   return (
     <PhoneMockup size={size} className={className}>
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={active.id}
-          initial={{ opacity: 0, scale: 1.03 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.97 }}
+          custom={direction}
+          initial={{ x: shouldReduceMotion ? 0 : `${direction * 100}%`, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: shouldReduceMotion ? 0 : `${direction * -100}%`, opacity: 0 }}
           transition={{ duration: shouldReduceMotion ? 0.01 : 0.35, ease: "easeInOut" }}
           className="absolute inset-0"
         >
