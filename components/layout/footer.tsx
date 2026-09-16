@@ -32,7 +32,7 @@ export function Footer() {
               alt={`${SITE_NAME} logo`}
               width={1907}
               height={447}
-              className="h-8 w-auto object-contain object-left brightness-0 invert  sm:h-8 lg:h-10"
+              className="h-8 w-auto object-contain object-left brightness-0 invert"
             />
             <p className="max-w-sm text-sm leading-6 text-white/70">{SITE_DESCRIPTION}</p>
             <div className="flex items-center gap-3 pt-1">

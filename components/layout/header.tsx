@@ -31,7 +31,7 @@ export function Header() {
             height={447}
             loading="eager"
             fetchPriority="high"
-            className="h-8 w-auto object-contain object-left  sm:h-8 lg:h-10"
+            className="h-8 w-auto object-contain object-left  sm:h-8 lg:h-8"
           />
         </Link>
 

@@ -35,7 +35,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
               </Link>
             ))}
             <div className="mt-2 flex flex-col gap-3 px-3">
-              <DownloadButtons className="flex-col items-stretch [&>*]:justify-center" />
+              <DownloadButtons className="flex-col items-stretch *:justify-center" />
             </div>
           </nav>
         </motion.div>
