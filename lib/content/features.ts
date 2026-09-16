@@ -8,14 +8,14 @@ export type Feature = {
 }
 
 export const FEATURES_BADGE = "Product Features"
-export const FEATURES_HEADLINE = "Everything a Supplier Needs, Built In."
+export const FEATURES_HEADLINE = "Everything a Supplier Needs, Built In"
 export const FEATURES_SUBHEADLINE =
   "Real screens from the 4Supplier app — built around how suppliers manage customers, orders, deliveries, and cash every day."
 
 export const FEATURES: Feature[] = [
   {
     label: "Customer Management",
-    headline: "Keep every customer organized in one place.",
+    headline: "Keep every customer organized in one place",
     description:
       "Store customer details, delivery locations, order history, outstanding balances, and security deposits — all in one customer profile.",
     benefits: [
@@ -28,7 +28,7 @@ export const FEATURES: Feature[] = [
   },
   {
     label: "Order Management",
-    headline: "Know what needs to be prepared, fulfilled, and delivered.",
+    headline: "Know what needs to be prepared, fulfilled, and delivered",
     description:
       "Create one-time orders or recurring deliveries from your product catalog, with quantities, pricing, and delivery time windows.",
     benefits: [
@@ -41,7 +41,7 @@ export const FEATURES: Feature[] = [
   },
   {
     label: "Delivery Management",
-    headline: "Make your delivery workflow easier to manage.",
+    headline: "Make your delivery workflow easier to manage",
     description:
       "Assign and reassign orders to your delivery team, and let them track their own pending and completed deliveries from their own portal.",
     benefits: [
@@ -54,7 +54,7 @@ export const FEATURES: Feature[] = [
   },
   {
     label: "Wallet & Due Management",
-    headline: "Keep track of outstanding amounts without relying on memory.",
+    headline: "Keep track of outstanding amounts without relying on memory",
     description:
       "A running wallet ledger tracks income, expenses, customer collections, deposits, and cash handed over by your delivery team.",
     benefits: [
@@ -67,7 +67,7 @@ export const FEATURES: Feature[] = [
   },
   {
     label: "Product Catalog",
-    headline: "Build a catalog that fits any supplier business.",
+    headline: "Build a catalog that fits any supplier business",
     description:
       "Organize products into categories with size and price variants — whether you sell bottled water, milk, gas cylinders, or meals.",
     benefits: [

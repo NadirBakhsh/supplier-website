@@ -8,7 +8,7 @@ export type AudienceCategory = {
 }
 
 export const AUDIENCE_BADGE = "Who Is This For"
-export const AUDIENCE_HEADLINE = "Built for Supplier-to-Customer Delivery Businesses."
+export const AUDIENCE_HEADLINE = "Built for Supplier-to-Customer Delivery Businesses"
 export const AUDIENCE_SUBHEADLINE =
   "4Supplier isn't built for one product — it's built for any business that sells and delivers to customers on a schedule or on demand."
 

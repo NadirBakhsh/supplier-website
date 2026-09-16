@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion, useReducedMotion, type Variants } from "framer-motion"
-import { ArrowRight, TrendingDown, TrendingUp, Package } from "lucide-react"
+import { ArrowRight, ChevronDown, TrendingDown, TrendingUp, Package } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { DownloadButtons } from "@/components/ui/download-buttons"
 import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
@@ -226,6 +226,28 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <motion.a
+        href="#solution"
+        aria-label="Scroll to next section"
+        initial={{ opacity: 0 }}
+        animate={
+          shouldReduceMotion
+            ? { opacity: 1 }
+            : { opacity: 1, y: [0, 8, 0] }
+        }
+        transition={
+          shouldReduceMotion
+            ? { duration: 0.01 }
+            : {
+                opacity: { duration: 0.6, delay: 0.9 },
+                y: { duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.9 },
+              }
+        }
+        className="absolute inset-x-0 bottom-4 z-10 mx-auto flex h-10 w-10 items-center justify-center rounded-full border border-brand-200 bg-white/90 text-brand-700 shadow-md backdrop-blur transition-colors hover:bg-brand-50 sm:bottom-6"
+      >
+        <ChevronDown className="h-5 w-5" />
+      </motion.a>
     </section>
   )
 }

@@ -18,7 +18,7 @@ export type Problem = {
 
 export const PROBLEM_BADGE = "The Challenge"
 export const PROBLEM_HEADLINE =
-  "Managing Customers and Deliveries Shouldn't Be This Complicated."
+  "Managing Customers and Deliveries Shouldn't Be This Complicated"
 export const PROBLEM_SUBHEADLINE =
   "As a supplier business grows, keeping track of customers, orders, and deliveries across notebooks, spreadsheets, and chat messages becomes harder every day."
 

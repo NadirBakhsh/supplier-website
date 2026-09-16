@@ -1,5 +1,5 @@
 export const COMPARISON_BADGE = "Without vs. With"
-export const COMPARISON_HEADLINE = "See the Difference 4Supplier Makes."
+export const COMPARISON_HEADLINE = "See the Difference 4Supplier Makes"
 export const COMPARISON_SUBHEADLINE =
   "The same supplier business, managed two different ways."
 

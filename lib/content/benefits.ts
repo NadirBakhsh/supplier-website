@@ -8,7 +8,7 @@ export type Benefit = {
 }
 
 export const BENEFITS_BADGE = "Why 4Supplier"
-export const BENEFITS_HEADLINE = "Built to Save You Time and Keep You Organized."
+export const BENEFITS_HEADLINE = "Built to Save You Time and Keep You Organized"
 
 export const BENEFITS: Benefit[] = [
   {

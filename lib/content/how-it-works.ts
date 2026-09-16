@@ -7,7 +7,7 @@ export type HowItWorksStep = {
 }
 
 export const HOW_IT_WORKS_BADGE = "How It Works"
-export const HOW_IT_WORKS_HEADLINE = "From Customer to Delivery, All in One App."
+export const HOW_IT_WORKS_HEADLINE = "From Customer to Delivery, All in One App"
 
 export const HOW_IT_WORKS_STEPS: HowItWorksStep[] = [
   {

@@ -8,7 +8,7 @@ export type TrustPillar = {
 }
 
 export const TRUST_BADGE = "Built for Suppliers"
-export const TRUST_HEADLINE = "Built Around How Supplier Businesses Actually Work."
+export const TRUST_HEADLINE = "Built Around How Supplier Businesses Actually Work"
 export const TRUST_SUBHEADLINE =
   "4Supplier is a new app, built directly from real supplier, delivery, and customer workflows — not a generic template."
 
