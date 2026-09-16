@@ -1,9 +1,11 @@
 "use client"
 
 import { SectionHeader } from "@/components/ui/section-header"
+import { PHONE_MOCKUP_WIDTH } from "@/components/product/phone-mockup"
 import { PhoneScreenshot } from "@/components/product/phone-screenshot"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { HOW_IT_WORKS_BADGE, HOW_IT_WORKS_HEADLINE, HOW_IT_WORKS_STEPS } from "@/lib/content/how-it-works"
+import { cn } from "@/lib/utils"
 
 export function HowItWorks() {
   const containerRef = useScrollReveal(".how-step")
@@ -26,7 +28,7 @@ export function HowItWorks() {
                 src={step.screenshot}
                 alt={step.alt}
                 size="sm"
-                className="mb-6"
+                className={cn("mb-6", PHONE_MOCKUP_WIDTH.sm)}
               />
               <span className="text-sm font-bold text-brand-600">{step.number}</span>
               <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>

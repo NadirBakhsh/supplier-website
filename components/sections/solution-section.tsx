@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { PhoneMockup } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import {
   SOLUTION_BADGE,
@@ -54,7 +54,7 @@ export function SolutionSection() {
                 </div>
               ))}
             </div>
-            <div className="grid gap-4 grid-rows-1 ">
+            <div className={`mx-auto grid w-full grid-rows-1 gap-4 ${PHONE_MOCKUP_MAX_WIDTH.lg}`}>
               <PhoneMockup size="lg">
                 <Image
                   src="/screenshots/supplier/supplier-wallet-screen.png"

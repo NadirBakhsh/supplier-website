@@ -2,6 +2,7 @@
 
 import { Check } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
+import { PHONE_MOCKUP_MAX_WIDTH } from "@/components/product/phone-mockup"
 import { PhoneScreenshot } from "@/components/product/phone-screenshot"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { cn } from "@/lib/utils"
@@ -57,7 +58,13 @@ export function FeatureShowcase() {
                   </ul>
                 </div>
 
-                <div className={cn("mx-auto w-full max-w-[280px]", reversed && "md:order-1")}>
+                <div
+                  className={cn(
+                    "mx-auto w-full",
+                    PHONE_MOCKUP_MAX_WIDTH.md,
+                    reversed && "md:order-1"
+                  )}
+                >
                   <PhoneScreenshot src={feature.screenshot} alt={feature.alt} size="md" />
                 </div>
               </div>

@@ -3,7 +3,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { DownloadButtons } from "@/components/ui/download-buttons"
-import { PhoneMockup } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
 import { cn } from "@/lib/utils"
 
 export function FinalCta() {
@@ -42,7 +42,7 @@ export function FinalCta() {
           </Link>
         </div>
 
-        <div className="mx-auto w-full max-w-60">
+        <div className={`mx-auto w-full ${PHONE_MOCKUP_MAX_WIDTH.md}`}>
           <PhoneMockup size="md">
             <Image
               src="/screenshots/supplier/supplier-menu-screen.png"

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, type PanInfo } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
+import { PHONE_MOCKUP_WIDTH } from "@/components/product/phone-mockup"
 import { ScreenshotCarousel } from "@/components/product/screenshot-carousel"
 import { cn } from "@/lib/utils"
 import {
@@ -41,10 +42,13 @@ export function MobileScreenCarousel() {
         />
 
         <div className="mt-14 grid grid-cols-1 items-stretch gap-10 md:grid-cols-[auto_1fr] md:gap-16">
-          <div className="mx-auto flex w-full max-w-[280px] flex-col items-center gap-4 sm:mx-0 sm:w-auto sm:max-w-none sm:flex-row sm:gap-3">
+          <div className="mx-auto flex w-full max-w-64 flex-col items-center gap-4 sm:mx-0 sm:w-auto sm:max-w-none sm:flex-row sm:gap-3">
             <motion.div
               onPanEnd={handlePanEnd}
-              className="w-[280px] max-w-full shrink-0 cursor-grab touch-pan-y active:cursor-grabbing sm:order-2"
+              className={cn(
+                PHONE_MOCKUP_WIDTH.lg,
+                "max-w-full shrink-0 cursor-grab touch-pan-y active:cursor-grabbing sm:order-2"
+              )}
             >
               <ScreenshotCarousel screens={CAROUSEL_SCREENS} activeIndex={activeIndex} size="lg" />
             </motion.div>

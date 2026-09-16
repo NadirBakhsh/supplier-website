@@ -6,7 +6,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion"
 import { ArrowRight, TrendingDown, TrendingUp, Package } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { DownloadButtons } from "@/components/ui/download-buttons"
-import { PhoneMockup } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
 import { HERO_CONTENT } from "@/lib/content/hero"
 import { cn } from "@/lib/utils"
 
@@ -114,7 +114,12 @@ export function Hero() {
         </motion.div>
 
         <div className="flex w-full flex-col gap-4 sm:gap-5">
-          <div className="relative mx-auto w-full max-w-66 px-1 pt-2 sm:max-w-76 sm:px-0 sm:pt-6 md:max-w-84 lg:ml-auto lg:max-w-90 lg:pt-8 xl:max-w-96">
+          <div
+            className={cn(
+              "relative mx-auto w-full px-1 pt-2 sm:px-0 sm:pt-6 lg:ml-auto lg:pt-8",
+              PHONE_MOCKUP_MAX_WIDTH.lg
+            )}
+          >
               <motion.div
                 initial={{ opacity: 0, x: 30, rotate: 6 }}
                 animate={{ opacity: 1, x: 0, rotate: 6 }}
