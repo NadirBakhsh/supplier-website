@@ -49,8 +49,8 @@ export function FinalCta() {
           </Link>
         </div>
 
-        <div className={`mx-auto w-full ${PHONE_MOCKUP_MAX_WIDTH.md}`}>
-          <PhoneMockup size="md">
+        <div className={`mx-auto w-full ${PHONE_MOCKUP_MAX_WIDTH.sm}`}>
+          <PhoneMockup size="sm">
             <Image
               src="/screenshots/supplier/supplier-menu-screen.png"
               alt="4Supplier supplier menu screen"

@@ -26,7 +26,7 @@ export function SolutionSection() {
     >
       <div
         aria-hidden="true"
-        className="absolute top-0 right-0 h-[28rem] w-[28rem] rounded-full bg-brand-green-500/10 blur-3xl"
+        className="absolute top-0 right-0 h-112 w-md rounded-full bg-brand-green-500/10 blur-3xl"
       />
 
       <div className="relative mx-auto grid max-w-7xl gap-16 px-4 sm:px-6 md:grid-cols-1 md:items-center lg:px-8">
@@ -60,8 +60,8 @@ export function SolutionSection() {
                 </div>
               ))}
             </div>
-            <div className={`mx-auto grid w-full grid-rows-1 gap-4 ${PHONE_MOCKUP_MAX_WIDTH.lg}`}>
-              <PhoneMockup size="lg">
+            <div className={`mx-auto grid w-full grid-rows-1 gap-4 ${PHONE_MOCKUP_MAX_WIDTH.md}`}>
+              <PhoneMockup size="md">
                 <Image
                   src="/screenshots/supplier/supplier-wallet-screen.png"
                   alt="4Supplier wallet screen showing income, expense, and balance"
