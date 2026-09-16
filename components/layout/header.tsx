@@ -31,8 +31,7 @@ export function Header() {
             height={447}
             loading="eager"
             fetchPriority="high"
-            sizes="(min-width: 640px) 220px, 176px"
-            className="h-10 w-auto object-contain object-left sm:h-12"
+            className="h-8 w-auto object-contain object-left  sm:h-8 lg:h-10"
           />
         </Link>
 

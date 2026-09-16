@@ -35,7 +35,7 @@ export function SolutionSection() {
             {SOLUTION_SUBHEADLINE}
           </p>
 
-          <div ref={containerRef} className="mt-10 grid gap-4 sm:grid-cols-3">
+          <div ref={containerRef} className="mt-10 grid gap-4 grid-cols-1 lg:grid-cols-3">
             <div className="grid gap-4 grid-rows-3 ">
               {SOLUTION_POINTS.slice(0, 3).map((point) => (
                 <div

@@ -20,7 +20,7 @@ const CARD_POSITIONS = [
 
 const HEADLINE_LINES = HERO_CONTENT.headline
   .split(". ")
-  .map((line) => (line.endsWith(".") ? line : `${line}.`))
+  .map((line) => (line.endsWith(".") ? line : `${line}`))
 
 function getContainerVariants(reduceMotion: boolean): Variants {
   return {
@@ -54,7 +54,7 @@ export function Hero() {
   const itemVariants = getItemVariants(shouldReduceMotion)
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white">
+    <section className="relative pt-10 overflow-hidden bg-linear-to-b from-brand-50 via-white to-white">
       <div
         aria-hidden="true"
         className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"
@@ -128,7 +128,7 @@ export function Hero() {
                     ? { duration: 0.01 }
                     : { duration: 0.7, delay: 0.15, ease: "easeOut" }
                 }
-                className="absolute top-0 right-0 hidden w-[56%] opacity-90 sm:block"
+                className="absolute top-0 right-0 hidden w-[56%] opacity-90 sm:block md:w-[52%] lg:w-[54%]"
               >
                 <PhoneMockup size="md">
                   <Image
@@ -150,7 +150,7 @@ export function Hero() {
                     ? { duration: 0.01 }
                     : { duration: 0.7, delay: 0.3, ease: "easeOut" }
                 }
-                className="relative mx-auto w-[72%] sm:mx-0 sm:w-[66%]"
+                className="relative mx-auto w-[72%] sm:mx-0 sm:w-[66%] md:w-[62%] lg:w-[64%]"
               >
                 <PhoneMockup size="lg">
                   <Image
@@ -191,7 +191,7 @@ export function Hero() {
                           }
                     }
                     className={cn(
-                      "absolute z-10 w-29 rounded-xl border border-border bg-white/95 p-2 shadow-lg backdrop-blur sm:w-32 sm:rounded-2xl sm:p-2.5 lg:w-36 lg:p-3 xl:w-40",
+                      "absolute z-10 w-29 rounded-xl border border-border bg-white/95 p-2 shadow-lg backdrop-blur sm:w-32 sm:rounded-2xl sm:p-2.5 md:w-34 lg:w-36 lg:p-3 xl:w-40",
                       CARD_POSITIONS[index]
                     )}
                   >

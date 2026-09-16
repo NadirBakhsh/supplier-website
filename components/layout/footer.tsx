@@ -25,14 +25,14 @@ export function Footer() {
   return (
     <footer className="border-t border-white/15 bg-brand-900 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-12 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.2fr)]">
           <div className="flex flex-col gap-4">
             <Image
               src="/logo.png"
               alt={`${SITE_NAME} logo`}
               width={1907}
               height={447}
-              className="h-10 w-auto object-contain object-left brightness-0 invert sm:h-11"
+              className="h-8 w-auto object-contain object-left brightness-0 invert  sm:h-8 lg:h-10"
             />
             <p className="max-w-sm text-sm leading-6 text-white/70">{SITE_DESCRIPTION}</p>
             <div className="flex items-center gap-3 pt-1">
@@ -86,7 +86,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-white">Get the app</h3>
             <DownloadButtons
               tone="dark"
-              className="w-full flex-nowrap *:flex-1 sm:flex-nowrap sm:*:flex-1"
+              className="w-full flex-col *:flex-none lg:flex-row lg:gap-3 lg:*:flex-1"
             />
           </div>
         </div>
