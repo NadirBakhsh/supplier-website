@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-900 py-20 text-white sm:py-28">
+    <section className="relative overflow-hidden bg-linear-to-br from-brand-700 via-brand-600 to-brand-900 py-20 text-white sm:py-28">
       <div
         aria-hidden="true"
         className="absolute -top-20 left-1/4 h-80 w-80 rounded-full bg-white/10 blur-3xl"
@@ -42,7 +42,7 @@ export function FinalCta() {
           </Link>
         </div>
 
-        <div className="mx-auto w-full max-w-[240px]">
+        <div className="mx-auto w-full max-w-60">
           <PhoneMockup size="md">
             <Image
               src="/screenshots/supplier/supplier-menu-screen.png"

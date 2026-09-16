@@ -49,7 +49,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <DownloadButtons className="[&>*]:py-2" />
+          <DownloadButtons className="*:py-2" />
         </div>
 
         <div className="hidden items-center md:flex lg:hidden">
