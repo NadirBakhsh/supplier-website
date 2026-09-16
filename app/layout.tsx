@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { SmoothScroll } from "@/components/layout/smooth-scroll"
 import { JsonLd } from "@/components/seo/json-ld"
 import { organizationJsonLd, softwareApplicationJsonLd, websiteJsonLd } from "@/lib/seo"
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/content/site"
@@ -45,8 +46,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/logo.png",
-        width: 1200,
-        height: 400,
+        width: 1907,
+        height: 447,
         alt: `${SITE_NAME} logo`,
       },
     ],
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={softwareApplicationJsonLd()} />
+        <SmoothScroll />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

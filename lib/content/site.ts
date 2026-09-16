@@ -19,19 +19,19 @@ export const SITE_DESCRIPTION =
 export const OPERATOR_NAME = "Nsians"
 
 export const NAV_LINKS = [
-  { label: "Problem", href: "#problem" },
-  { label: "Solution", href: "#solution" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Problem", href: "/#problem" },
+  { label: "Solution", href: "/#solution" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Features", href: "/#features" },
+  { label: "FAQ", href: "/#faq" },
 ] as const
 
 export const FOOTER_PRODUCT_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "See the App", href: "#app-preview" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Download", href: "#download" },
+  { label: "Features", href: "/#features" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "See the App", href: "/#app-preview" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Download", href: "/#download" },
 ] as const
 
 export const FOOTER_LEGAL_LINKS = [

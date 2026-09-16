@@ -31,7 +31,7 @@ export function FinalCta() {
             <DownloadButtons tone="dark" />
           </div>
           <Link
-            href="#how-it-works"
+            href="/#how-it-works"
             className={cn(
               buttonVariants({ variant: "ghost" }),
               "group px-0 text-white hover:bg-transparent hover:text-white/80"

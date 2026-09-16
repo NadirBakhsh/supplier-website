@@ -20,7 +20,7 @@ export const HERO_CONTENT: {
     "4Supplier gives suppliers one place to manage customers, orders, recurring deliveries, your delivery team, and your wallet — instead of scattered notes, spreadsheets, and phone calls.",
   primaryCta: "Download the App",
   secondaryCta: "See How It Works",
-  secondaryCtaHref: "#how-it-works",
+  secondaryCtaHref: "/#how-it-works",
   floatingCards: [
     {
       label: "Today's Orders",

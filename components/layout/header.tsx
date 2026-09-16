@@ -15,15 +15,24 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+      <div
+        data-header-bar
+        className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8"
+      >
+        <Link
+          href="/"
+          className="flex shrink-0 items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          onClick={() => setOpen(false)}
+        >
           <Image
             src="/logo.png"
             alt={`${SITE_NAME} logo`}
-            width={300}
-            height={100}
-            priority
-            className="h-7 w-auto"
+            width={1907}
+            height={447}
+            loading="eager"
+            fetchPriority="high"
+            sizes="(min-width: 640px) 220px, 176px"
+            className="h-10 w-auto object-contain object-left sm:h-12"
           />
         </Link>
 
@@ -32,7 +41,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="relative text-sm font-medium text-muted-foreground transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-brand-500 after:transition-transform after:duration-300 hover:text-foreground hover:after:scale-x-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 motion-reduce:after:transition-none"
             >
               {link.label}
             </Link>
@@ -44,7 +53,7 @@ export function Header() {
         </div>
 
         <div className="hidden items-center md:flex lg:hidden">
-          <Link href="#download" className={cn(buttonVariants({ size: "default" }), "h-11 px-4")}>
+          <Link href="/#download" className={cn(buttonVariants({ size: "default" }), "h-11 px-4")}>
             Download
           </Link>
         </div>

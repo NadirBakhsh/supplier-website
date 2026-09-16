@@ -30,9 +30,9 @@ export function Footer() {
             <Image
               src="/logo.png"
               alt={`${SITE_NAME} logo`}
-              width={300}
-              height={100}
-              className="h-7 w-auto brightness-0 invert"
+              width={1907}
+              height={447}
+              className="h-10 w-auto object-contain object-left brightness-0 invert sm:h-11"
             />
             <p className="max-w-sm text-sm leading-6 text-white/70">{SITE_DESCRIPTION}</p>
             <div className="flex items-center gap-3 pt-1">
