@@ -84,7 +84,10 @@ export function Footer() {
 
           <div className="flex flex-col gap-3">
             <h3 className="text-sm font-semibold text-white">Get the app</h3>
-            <DownloadButtons tone="dark" className="flex-col items-stretch" />
+            <DownloadButtons
+              tone="dark"
+              className="w-full flex-nowrap *:flex-1 sm:flex-nowrap sm:*:flex-1"
+            />
           </div>
         </div>
 

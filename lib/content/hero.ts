@@ -15,7 +15,7 @@ export const HERO_CONTENT: {
   floatingCards: HeroFloatingCard[]
 } = {
   eyebrow: "Supplier Management App",
-  headline: "Manage Your Customers. Simplify Your Deliveries. Grow Your Business.",
+  headline: "Manage Your Customers\nSimplify Your Deliveries\nGrow Your Business",
   subheadline:
     "4Supplier gives suppliers one place to manage customers, orders, recurring deliveries, your delivery team, and your wallet — instead of scattered notes, spreadsheets, and phone calls.",
   primaryCta: "Download the App",

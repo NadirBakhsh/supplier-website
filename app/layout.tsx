@@ -4,6 +4,7 @@ import "./globals.css"
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { SmoothScroll } from "@/components/layout/smooth-scroll"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import { JsonLd } from "@/components/seo/json-ld"
 import { organizationJsonLd, softwareApplicationJsonLd, websiteJsonLd } from "@/lib/seo"
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/content/site"
@@ -71,13 +72,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <JsonLd data={organizationJsonLd()} />
-        <JsonLd data={websiteJsonLd()} />
-        <JsonLd data={softwareApplicationJsonLd()} />
-        <SmoothScroll />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <TooltipProvider>
+          <JsonLd data={organizationJsonLd()} />
+          <JsonLd data={websiteJsonLd()} />
+          <JsonLd data={softwareApplicationJsonLd()} />
+          <SmoothScroll />
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </TooltipProvider>
       </body>
     </html>
   )

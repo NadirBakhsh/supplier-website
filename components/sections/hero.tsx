@@ -13,9 +13,9 @@ import { cn } from "@/lib/utils"
 const CARD_ICONS = [Package, TrendingDown, TrendingUp]
 
 const CARD_POSITIONS = [
-  "top-3 left-0",
-  "bottom-6 right-0",
-  "top-[40%] right-0",
+  "top-0 -left-1 sm:top-3 sm:left-0",
+  "bottom-2 -right-1 sm:bottom-6 sm:right-0",
+  "top-[38%] -right-2 sm:top-[40%] sm:right-0",
 ] as const
 
 const HEADLINE_LINES = HERO_CONTENT.headline
@@ -98,7 +98,7 @@ export function Hero() {
 
           <motion.div variants={itemVariants} className="flex w-full flex-col items-start gap-3 pt-1 sm:gap-4">
             <div id="download" className="w-full max-w-md sm:w-auto sm:max-w-none">
-              <DownloadButtons className="w-full max-sm:flex-col max-sm:*:w-full max-sm:*:justify-center sm:w-auto" />
+              <DownloadButtons className="w-full sm:w-auto" />
             </div>
             <Link
               href={HERO_CONTENT.secondaryCtaHref}
@@ -114,7 +114,7 @@ export function Hero() {
         </motion.div>
 
         <div className="flex w-full flex-col gap-4 sm:gap-5">
-          <div className="relative mx-auto w-full max-w-66 pt-2 sm:max-w-76 sm:pt-6 md:max-w-84 lg:ml-auto lg:max-w-90 lg:pt-8 xl:max-w-96">
+          <div className="relative mx-auto w-full max-w-66 px-1 pt-2 sm:max-w-76 sm:px-0 sm:pt-6 md:max-w-84 lg:ml-auto lg:max-w-90 lg:pt-8 xl:max-w-96">
               <motion.div
                 initial={{ opacity: 0, x: 30, rotate: 6 }}
                 animate={{ opacity: 1, x: 0, rotate: 6 }}
@@ -186,7 +186,7 @@ export function Hero() {
                           }
                     }
                     className={cn(
-                      "absolute z-10 hidden w-36 rounded-2xl border border-border bg-white/95 p-3 shadow-lg backdrop-blur lg:block xl:w-40",
+                      "absolute z-10 w-29 rounded-xl border border-border bg-white/95 p-2 shadow-lg backdrop-blur sm:w-32 sm:rounded-2xl sm:p-2.5 lg:w-36 lg:p-3 xl:w-40",
                       CARD_POSITIONS[index]
                     )}
                   >
@@ -207,7 +207,7 @@ export function Hero() {
                     </div>
                     <p
                       className={cn(
-                        "mt-1.5 text-lg font-semibold text-foreground",
+                        "mt-1 text-base font-semibold text-foreground sm:mt-1.5 sm:text-lg",
                         card.tone === "outstanding" && "text-outstanding",
                         card.tone === "positive" && "text-brand-green-700"
                       )}
@@ -218,44 +218,6 @@ export function Hero() {
                   </motion.div>
                 )
               })}
-          </div>
-
-          <div className="mx-auto grid w-full max-w-66 grid-cols-1 gap-2 min-[400px]:grid-cols-3 sm:max-w-76 md:max-w-84 lg:hidden">
-            {HERO_CONTENT.floatingCards.map((card, index) => {
-              const Icon = CARD_ICONS[index] ?? Package
-
-              return (
-                <div
-                  key={card.label}
-                  className="flex min-w-0 items-center gap-2.5 rounded-xl border border-border bg-white px-3 py-2.5 shadow-sm"
-                >
-                  <span
-                    className={cn(
-                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
-                      card.tone === "outstanding" && "bg-red-50 text-outstanding",
-                      card.tone === "positive" && "bg-brand-green-500/10 text-brand-green-700",
-                      !card.tone && "bg-brand-50 text-brand-700"
-                    )}
-                  >
-                    <Icon className="h-4 w-4" />
-                  </span>
-                  <div className="flex min-w-0 flex-col leading-tight">
-                    <span className="truncate text-[11px] font-medium text-muted-foreground">
-                      {card.label}
-                    </span>
-                    <span
-                      className={cn(
-                        "text-sm font-semibold text-foreground",
-                        card.tone === "outstanding" && "text-outstanding",
-                        card.tone === "positive" && "text-brand-green-700"
-                      )}
-                    >
-                      {card.value}
-                    </span>
-                  </div>
-                </div>
-              )
-            })}
           </div>
         </div>
       </div>

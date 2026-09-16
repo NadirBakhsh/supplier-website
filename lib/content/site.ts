@@ -11,7 +11,7 @@ export const SITE_URL = "https://4supplier.com"
 export const SITE_NAME = "4Supplier"
 
 export const SITE_TAGLINE =
-  "Manage Your Customers. Simplify Your Deliveries. Grow Your Business."
+  "Manage Your Customers\nSimplify Your Deliveries\nGrow Your Business"
 
 export const SITE_DESCRIPTION =
   "4Supplier is the supplier management app that brings your customers, orders, recurring deliveries, delivery team, and wallet into one simple mobile experience."
