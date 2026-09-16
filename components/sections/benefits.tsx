@@ -3,6 +3,8 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion"
 import { SectionHeader } from "@/components/ui/section-header"
 import { BENEFITS, BENEFITS_BADGE, BENEFITS_HEADLINE } from "@/lib/content/benefits"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
+import { cn } from "@/lib/utils"
 
 function getContainerVariants(reduceMotion: boolean): Variants {
   return {
@@ -29,7 +31,7 @@ export function Benefits() {
   const cardVariants = getCardVariants(shouldReduceMotion)
 
   return (
-    <section className="bg-muted/40 py-20 sm:py-28">
+    <section className={cn(SECTION_VIEWPORT_CLASS, "bg-muted/40 py-20 sm:py-28")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader badge={BENEFITS_BADGE} title={BENEFITS_HEADLINE} />
 

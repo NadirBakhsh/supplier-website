@@ -8,10 +8,12 @@ import { SectionHeader } from "@/components/ui/section-header"
 import { JsonLd } from "@/components/seo/json-ld"
 import { FAQS, FAQ_BADGE, FAQ_HEADLINE } from "@/lib/content/faq"
 import { faqJsonLd } from "@/lib/seo"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
+import { cn } from "@/lib/utils"
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-muted/40 py-20 sm:py-28">
+    <section id="faq" className={cn(SECTION_VIEWPORT_CLASS, "bg-muted/40 py-20 sm:py-28")}>
       <JsonLd data={faqJsonLd(FAQS)} />
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeader badge={FAQ_BADGE} title={FAQ_HEADLINE} />

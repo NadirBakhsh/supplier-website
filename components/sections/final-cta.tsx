@@ -3,12 +3,19 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { DownloadButtons } from "@/components/ui/download-buttons"
-import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
+import { PhoneMockup } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH } from "@/lib/constants/phone-mockup"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
 import { cn } from "@/lib/utils"
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-linear-to-br from-brand-700 via-brand-600 to-brand-900 py-20 text-white sm:py-28">
+    <section
+      className={cn(
+        SECTION_VIEWPORT_CLASS,
+        "relative overflow-hidden bg-linear-to-br from-brand-700 via-brand-600 to-brand-900 py-20 text-white sm:py-28"
+      )}
+    >
       <div
         aria-hidden="true"
         className="absolute -top-20 left-1/4 h-80 w-80 rounded-full bg-white/10 blur-3xl"
@@ -18,7 +25,7 @@ export function FinalCta() {
         className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand-green-500/15 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 md:grid-cols-[1.1fr_auto] lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 md:grid-cols-[1.1fr_1fr] lg:px-8">
         <div className="flex flex-col items-start gap-6 text-left">
           <h2 className="max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             Ready to Simplify the Way You Manage Your Business?

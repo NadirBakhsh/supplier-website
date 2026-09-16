@@ -2,7 +2,7 @@
 
 import { Check } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
-import { PHONE_MOCKUP_MAX_WIDTH } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH } from "@/lib/constants/phone-mockup"
 import { PhoneScreenshot } from "@/components/product/phone-screenshot"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { cn } from "@/lib/utils"
@@ -12,12 +12,13 @@ import {
   FEATURES_HEADLINE,
   FEATURES_SUBHEADLINE,
 } from "@/lib/content/features"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
 
 export function FeatureShowcase() {
   const containerRef = useScrollReveal(".feature-row")
 
   return (
-    <section id="features" className="bg-white py-20 sm:py-28">
+    <section id="features" className={cn(SECTION_VIEWPORT_CLASS, "bg-white py-20 sm:py-28")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={FEATURES_BADGE}

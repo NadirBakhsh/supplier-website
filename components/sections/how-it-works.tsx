@@ -1,17 +1,18 @@
 "use client"
 
 import { SectionHeader } from "@/components/ui/section-header"
-import { PHONE_MOCKUP_WIDTH } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_WIDTH } from "@/lib/constants/phone-mockup"
 import { PhoneScreenshot } from "@/components/product/phone-screenshot"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { HOW_IT_WORKS_BADGE, HOW_IT_WORKS_HEADLINE, HOW_IT_WORKS_STEPS } from "@/lib/content/how-it-works"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
 import { cn } from "@/lib/utils"
 
 export function HowItWorks() {
   const containerRef = useScrollReveal(".how-step")
 
   return (
-    <section id="how-it-works" className="bg-muted/40 py-20 sm:py-28">
+    <section id="how-it-works" className={cn(SECTION_VIEWPORT_CLASS, "bg-muted/40 py-20 sm:py-28")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader badge={HOW_IT_WORKS_BADGE} title={HOW_IT_WORKS_HEADLINE} />
 

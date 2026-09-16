@@ -1,7 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
+import { PhoneMockup } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH } from "@/lib/constants/phone-mockup"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import {
   SOLUTION_BADGE,
@@ -9,6 +10,8 @@ import {
   SOLUTION_POINTS,
   SOLUTION_SUBHEADLINE
 } from "@/lib/content/solution"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
+import { cn } from "@/lib/utils"
 
 export function SolutionSection() {
   const containerRef = useScrollReveal(".solution-point")
@@ -16,7 +19,10 @@ export function SolutionSection() {
   return (
     <section
       id="solution"
-      className="relative overflow-hidden bg-gradient-to-b from-brand-900 to-brand-800 py-20 text-white sm:py-28"
+      className={cn(
+        SECTION_VIEWPORT_CLASS,
+        "relative overflow-hidden bg-gradient-to-b from-brand-900 to-brand-800 py-20 text-white sm:py-28"
+      )}
     >
       <div
         aria-hidden="true"

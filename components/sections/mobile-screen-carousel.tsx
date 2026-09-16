@@ -4,8 +4,9 @@ import { useState } from "react"
 import { motion, type PanInfo } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { SectionHeader } from "@/components/ui/section-header"
-import { PHONE_MOCKUP_WIDTH } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_WIDTH } from "@/lib/constants/phone-mockup"
 import { ScreenshotCarousel } from "@/components/product/screenshot-carousel"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
 import { cn } from "@/lib/utils"
 import {
   CAROUSEL_BADGE,
@@ -35,7 +36,7 @@ export function MobileScreenCarousel() {
   }
 
   return (
-    <section id="app-preview" className="bg-brand-50/60 py-20 sm:py-28">
+    <section id="app-preview" className={cn(SECTION_VIEWPORT_CLASS, "bg-brand-50/60 py-20 sm:py-28")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={CAROUSEL_BADGE}

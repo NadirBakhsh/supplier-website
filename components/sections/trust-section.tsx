@@ -7,10 +7,12 @@ import {
   TRUST_PLACEHOLDER_NOTE,
   TRUST_SUBHEADLINE,
 } from "@/lib/content/trust"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
+import { cn } from "@/lib/utils"
 
 export function TrustSection() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className={cn(SECTION_VIEWPORT_CLASS, "bg-white py-20 sm:py-28")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={TRUST_BADGE}

@@ -6,8 +6,10 @@ import { motion, useReducedMotion, type Variants } from "framer-motion"
 import { ArrowRight, ChevronDown, TrendingDown, TrendingUp, Package } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import { DownloadButtons } from "@/components/ui/download-buttons"
-import { PHONE_MOCKUP_MAX_WIDTH, PhoneMockup } from "@/components/product/phone-mockup"
+import { PhoneMockup } from "@/components/product/phone-mockup"
+import { PHONE_MOCKUP_MAX_WIDTH } from "@/lib/constants/phone-mockup"
 import { HERO_CONTENT } from "@/lib/content/hero"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
 import { cn } from "@/lib/utils"
 
 const CARD_ICONS = [Package, TrendingDown, TrendingUp]
@@ -54,7 +56,12 @@ export function Hero() {
   const itemVariants = getItemVariants(shouldReduceMotion)
 
   return (
-    <section className="relative pt-10 overflow-hidden bg-linear-to-b from-brand-50 via-white to-white">
+    <section
+      className={cn(
+        SECTION_VIEWPORT_CLASS,
+        "relative overflow-hidden bg-linear-to-b from-brand-50 via-white to-white pt-10"
+      )}
+    >
       <div
         aria-hidden="true"
         className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl"

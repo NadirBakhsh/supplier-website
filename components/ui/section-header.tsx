@@ -34,7 +34,7 @@ export function SectionHeader({
       ) : null}
       <Heading
         className={cn(
-          "max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl",
+          "max-w-4xl text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl",
           titleClassName
         )}
       >

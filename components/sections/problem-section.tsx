@@ -3,12 +3,14 @@
 import { SectionHeader } from "@/components/ui/section-header"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import { PROBLEM_BADGE, PROBLEM_HEADLINE, PROBLEM_SUBHEADLINE, PROBLEMS } from "@/lib/content/problems"
+import { SECTION_VIEWPORT_CLASS } from "@/lib/constants/layout"
+import { cn } from "@/lib/utils"
 
 export function ProblemSection() {
   const containerRef = useScrollReveal(".problem-card")
 
   return (
-    <section id="problem" className="bg-white py-20 sm:py-28">
+    <section id="problem" className={cn(SECTION_VIEWPORT_CLASS, "bg-white py-20 sm:py-28")}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge={PROBLEM_BADGE}
